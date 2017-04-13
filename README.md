@@ -14,6 +14,7 @@ Things you may want to cover:
    2. Database Cleaner
    3. Capybara
    4. Faker
+   5. email_validator : for validating emails addr
 * Configuration
 
 * Database creation
@@ -26,4 +27,8 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* others
+run migrations on test DB
+```
+rails db:migrate RAILS_ENV=test
+```
