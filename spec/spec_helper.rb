@@ -100,5 +100,12 @@ RSpec.configure do |config|
 ##Ins Start RK01
 config.order = :random
 Kernel.srand config.seed
+
+##---manditory factory girl config
+config.before(:all) do
+  FactoryGirl.reload
+end
 ##Ins end RK01
 end
+
+

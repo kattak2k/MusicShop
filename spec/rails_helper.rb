@@ -24,8 +24,9 @@ require 'capybara/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
-
+## Ins start RK01  "factory_girl "
+ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+## Ins End RK01
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!

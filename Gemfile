@@ -54,6 +54,7 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'capybara'
+  gem 'factory_girl'
 end
 
 ##Ins End RK01 

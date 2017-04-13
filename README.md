@@ -9,7 +9,7 @@ Things you may want to cover:
   1. Rails 5.0.2  
   2. Ruby 2.3.3
 
-* System dependencies
+* Gems list
    1. Rspec
    2. Database Cleaner
    3. Capybara
@@ -20,6 +20,12 @@ Things you may want to cover:
       bundle exec annotate --position before
       ```
       after running see the fixtures, you'll see some comments added before
+   7. std. fixtures
+       dir spec/fixtures (models)
+   8. Factory_girl   
+       a. dir spec/support  => contains configuration 
+          rails_helper.rb : uncomment "Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }"
+       b. dir spec/factories
 * Configuration
 
 * Database creation
