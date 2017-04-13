@@ -43,6 +43,10 @@ gem 'jbuilder', '~> 2.5'
 ##Ins Start RK01
 gem 'email_validator'
 
+group :development do
+  gem 'annotate'
+end
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end

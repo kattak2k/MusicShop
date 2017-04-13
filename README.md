@@ -15,6 +15,11 @@ Things you may want to cover:
    3. Capybara
    4. Faker
    5. email_validator : for validating emails addr
+   6. annotate : for adding comment summarizing the current schema
+      ```
+      bundle exec annotate --position before
+      ```
+      after running see the fixtures, you'll see some comments added before
 * Configuration
 
 * Database creation

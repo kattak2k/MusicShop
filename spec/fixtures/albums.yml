@@ -8,8 +8,5 @@
 #  updated_at :datetime         not null
 #
 
-class Album < ApplicationRecord
-    validates :title, presence: true
-    validates :title, length: { maximum: 100 }
-     
-end
+the_game: 
+  title: 'The game'
