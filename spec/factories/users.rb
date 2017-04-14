@@ -4,9 +4,12 @@ FactoryGirl.define do
       upcased true
     end  
 
-    name "Maurya"
-    # for email uniqueness
-    sequence(:email, 10) { |n| "user#{n}@gmail.com" }
+    # name "Maurya"
+    # # for email uniqueness
+    # sequence(:email, 10) { |n| "user#{n}@gmail.com" }
+    # replaced the code with faker
+    name Faker::Name.name
+    email {Faker::Internet.email(name) }
 
 #logic for "upcase the email"
     after(:build) do |user, eval|

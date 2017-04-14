@@ -8,6 +8,7 @@ require 'rspec/rails'
 ##Ins Start RK01
 require 'database_cleaner'
 require 'capybara/rails'
+require 'faker'
 ##Ins End RK01
 # Add additional requires below this line. Rails is not loaded until this point!
 

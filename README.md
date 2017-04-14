@@ -26,6 +26,17 @@ Things you may want to cover:
        a. dir spec/support  => contains configuration 
           rails_helper.rb : uncomment "Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }"
        b. dir spec/factories
+       c. add this config in spec_helper.rb
+       ```
+        config.before(:all) do
+            FactoryGirl.reload
+        end
+       ``` 
+    9. Faker gem
+       add in rails_helper.rb
+        ```
+        require 'faker'
+        ```
 * Configuration
 
 * Database creation
