@@ -13,4 +13,8 @@
 class User < ApplicationRecord
     validates :name, presence: true
     validates :email, presence: true, uniqueness: true, email: true
+
+##downcase email
+before_validation -> {email.downcase!}
+
 end

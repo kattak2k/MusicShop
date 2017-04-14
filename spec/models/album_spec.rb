@@ -31,3 +31,5 @@ RSpec.describe Album do
     expect(subject).to be_valid
   end
 end
+
+13.00

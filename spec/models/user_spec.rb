@@ -40,4 +40,9 @@ RSpec.describe User, type: :model do
     subject.email = '123@'
     expect(subject).not_to be_valid
   end
+
+ it 'converts user to downcase' do
+    user = create(:user, upcased: true)
+    expect(user.email).to eq(user.email.downcase)
+  end
 end
