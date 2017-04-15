@@ -12,6 +12,10 @@ require 'rails_helper'
 
 RSpec.describe Album do
   subject {build(:album)}
+  
+  # desciptions will automatically be added in rspec
+  it { is_expected.to respond_to(:users) }
+  it { is_expected.to respond_to(:cart_items) }
 
     context "scope" do
       # .popular is call method called popular

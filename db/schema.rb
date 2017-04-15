@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415211732) do
+ActiveRecord::Schema.define(version: 20170415214842) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 20170415211732) do
     t.datetime "updated_at", null: false
     t.boolean  "popular"
     t.index ["popular"], name: "index_albums_on_popular"
+  end
+
+  create_table "cart_items", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "album_id"
+    t.integer  "quantity",   default: 1
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.index ["album_id"], name: "index_cart_items_on_album_id"
+    t.index ["user_id"], name: "index_cart_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

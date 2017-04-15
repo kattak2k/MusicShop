@@ -9,6 +9,9 @@
 #
 
 class Album < ApplicationRecord
+    has_many :cart_items, dependent: :delete_all
+    has_many :users, through: :cart_items
+
     validates :title, presence: true
     validates :title, length: { maximum: 100 }
 

@@ -11,6 +11,9 @@
 #
 
 class User < ApplicationRecord
+    has_many :cart_items, dependent: :delete_all
+    has_many :albums, through: :cart_items
+
     validates :name, presence: true
     validates :email, presence: true, uniqueness: true, email: true
 

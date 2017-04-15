@@ -45,7 +45,13 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-
+  1. table => Albums  : fields => title
+  2. table => Users   : fields => name, email
+  3. popular field added to albums
+     ``` rails g migration AddPopularToAlbums popular:boolean:index```
+  4. table => CartItem : fields => quantity
+           many to many with user and album table
+     ``` rails g model CartItem user:references album:references quantity:integer ```
 * Database initialization
 
 * How to run the test suite
