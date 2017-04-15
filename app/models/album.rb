@@ -11,5 +11,6 @@
 class Album < ApplicationRecord
     validates :title, presence: true
     validates :title, length: { maximum: 100 }
-     
+
+    scope :popular, -> {where( popular: true)}     
 end
