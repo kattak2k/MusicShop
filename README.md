@@ -32,6 +32,11 @@ Things you may want to cover:
             FactoryGirl.reload
         end
        ``` 
+       d. Methods:
+          1. build -> instantiate a model without saving in DB
+          2. create ->instantiate a model, creates in DB
+          3. attributes_for -> returns a Hash of object attributes
+          4. build_stubbed -> same as build, but creates a fake id and stops our DB interaction methods
     9. Faker gem
        add in rails_helper.rb
         ```
