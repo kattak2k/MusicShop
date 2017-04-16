@@ -20,6 +20,7 @@ RSpec.describe User do #, type: :model do
     expect(users(:maurya)).to be_valid
   end  
 =end  
+
   context "Validations" do  # wrapping the tests into groups using the context
       subject {build(:user)}
       
@@ -52,4 +53,35 @@ RSpec.describe User do #, type: :model do
       expect(subject.email).to eq(subject.email.downcase)
     end
   end 
+
+#=begin
+describe "#add_to_cart!" do
+    let(:album) {create(:album)}
+    let(:user) {create(:user)}
+    it "is expected to have quantity 1 after adding one item" do
+      user.add_to_cart! album
+      expect(user.cart_items.size).to eq(1)
+    end
+    it "is expected to have quantity 2 after adding two items" do
+      2.times { user.add_to_cart! album }
+      expect(user.cart_items.size).to eq(1)
+      expect(user.cart_items.first.quantity).to eq(2)
+    end
+  end
+
+  describe "#remove_from_cart!" do
+    let(:album) {create(:album)}
+    let(:user) {create(:user)}
+    let!(:cart_item) {create(:cart_item, quantity: 2, user: user, album: album)}
+    it "is expected to have quantity 1 after removing one item" do
+      user.remove_from_cart! album
+      expect(user.cart_items.find(cart_item.id).quantity).to eq(1)
+    end
+    it "is expected to have cart item destroyed after removing all items" do
+      cart_item.quantity.times { user.remove_from_cart! album }
+      expect(user.cart_items).not_to include(cart_item)
+    end
+  end
+#=end
+
 end
