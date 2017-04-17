@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :albums
+  resources :cart_items, only: [:create, :destroy]
   root to: 'albums#index'
   get 'albums/index'
   

@@ -57,6 +57,7 @@ group :test do
   gem 'factory_girl'
   gem 'faker'
   gem 'rails-controller-testing'
+  gem 'capybara-screenshot'
 end
 
 ##Ins End RK01 

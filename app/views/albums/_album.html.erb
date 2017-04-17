@@ -1,4 +1,6 @@
 <li>
-    <!-- calling helper albums_helper.rb -->
     <%= with_status album %>
+        <% if current_user %>
+            <%= link_to 'Add to cart', cart_items_path(album_id: album.id), method: :post %>
+                <% end %>
 </li>

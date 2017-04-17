@@ -23,26 +23,34 @@ Things you may want to cover:
    7. std. fixtures
        dir spec/fixtures (models)
    8. Factory_girl   
-       a. dir spec/support  => contains configuration 
+       1. dir spec/support  => contains configuration 
           rails_helper.rb : uncomment "Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }"
-       b. dir spec/factories
-       c. add this config in spec_helper.rb
+       2. dir spec/factories
+       3. add this config in spec_helper.rb
        ```
         config.before(:all) do
             FactoryGirl.reload
         end
        ``` 
-       d. Methods:
+       4. Methods:
           1. build -> instantiate a model without saving in DB
           2. create ->instantiate a model, creates in DB
           3. attributes_for -> returns a Hash of object attributes
           4. build_stubbed -> same as build, but creates a fake id and stops our DB interaction methods
     9. Faker gem
        add in rails_helper.rb
-        ```
-        require 'faker'
-        ```
+        ```       require 'faker'        ```
+    10. capybara-screenshot
+             add in rails_helper.rb
+        
+        ```rrequire 'capybara-screenshot/rspec'```
+        and
+        ```config.include CapybaraExtensions, type: :feature ```
+        check --> #see spec/support/capybara_extensions.rb 
+          
 * Configuration
+  see helpers "AuthenticationHelper" called in application_controller.rb
+
 
 * Database creation
   1. table => Albums  : fields => title

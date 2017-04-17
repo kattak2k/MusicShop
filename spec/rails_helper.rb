@@ -7,7 +7,9 @@ require 'spec_helper'
 require 'rspec/rails'
 ##Ins Start RK01
 require 'database_cleaner'
-require 'capybara/rails'
+require 'capybara/rspec'
+require 'capybara-screenshot/rspec'
+require 'pry-rails'
 require 'faker'
 ##Ins End RK01
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -33,6 +35,8 @@ require 'faker'
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+#see spec/support/capybara_extensions.rb 
+  config.include CapybaraExtensions, type: :feature
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
