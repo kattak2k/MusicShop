@@ -9,7 +9,7 @@ require 'rspec/rails'
 require 'database_cleaner'
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
-require 'pry-rails'
+#require 'pry-rails'
 require 'faker'
 ##Ins End RK01
 # Add additional requires below this line. Rails is not loaded until this point!
