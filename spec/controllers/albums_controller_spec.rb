@@ -18,7 +18,9 @@ RSpec.describe AlbumsController do
     it "create a new album" do
       expect(Album).to receive(:new).with({title: 'Test'}).and_return(album)
       expect(album).to receive(:save).and_return(true)
-      post :create, album: {title: 'Test'}
+      #post :create, album: {title: 'Test'}
+      #post :create, params: {title: 'Test'}, flash: {notice:"Album was created!" }
+       post = Album.create(title: 'Test')
       expect(flash[:success]).to eq("Album was created!")
       expect(response).to redirect_to(albums_path)
     end
@@ -26,8 +28,10 @@ RSpec.describe AlbumsController do
     it "renders a new action if the album was not saved" do
       expect(Album).to receive(:new).with({title: ''}).and_return(album)
       expect(album).to receive(:save).and_return(false)
-      post :create, album: {title: ''}
-      expect(response).to render_template(:new)
+      #post :create, album: {title: ''}
+      post = Album.create(title: '')
+
+      expect(response).to render_template("new")
     end
   end
 

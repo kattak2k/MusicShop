@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :albums, only: [:index]
+  resources :albums
   root to: 'albums#index'
   get 'albums/index'
   
